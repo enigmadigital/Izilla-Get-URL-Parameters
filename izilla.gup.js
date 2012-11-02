@@ -1,6 +1,6 @@
 /*
  * Izilla GUP v1.1.2
- * Gets "true" url parameters and adds them as classes to html tag and to the izilla_gup object
+ * Gets "true" url parameters and adds them as classes to the html tag and to the izilla_gup object
  *
  * eg. article.html?lightbox=true&mqdebug=true
  *
@@ -14,9 +14,12 @@
  * Licensed under the MIT license
  *
  */
-
-var izilla_gup = (function() {
-	var rx = /(&|\?)(\w+)=true/gi, str = window.location.href, m, s = '', gup = {};
+;var izilla_gup = (function() {
+	var rx = /(&|\?)(\w+)=true/gi,
+		str = window.location.href,
+		m,
+		s = '',
+		gup = {};
 	while (m = rx.exec(str)) {
 		s += ' ' + m[2];
 		gup[m[2]] = true;
